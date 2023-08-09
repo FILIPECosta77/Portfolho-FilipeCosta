@@ -3,31 +3,3 @@
 body {
   background-color: #f9f9f9;
 }
-
-.buttonIcon {
-  color: #000;
-  width: 100%;
-  height: 100%;
-}
-
-.introduct {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.css-16tkpzi-MuiSvgIcon-root,
-.introductText,
-.reviewText {
-  color: #ffe45e !important;
-}
-
-.icons_List {
-  gap: 24px !important;
-}
-
-.icons {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}

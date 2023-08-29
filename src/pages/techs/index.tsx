@@ -14,7 +14,7 @@ const Techs = () => {
         flexDirection={"row"}
         justifyContent={"space-between"}
       >
-        <Container></Container>
+        <Container />
         <LongDesc />
       </Box>
     </Box>

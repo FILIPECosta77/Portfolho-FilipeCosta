@@ -1,9 +1,29 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Heading } from "@chakra-ui/react";
 import React from "react";
+import Icons from "../icons";
 
 const LongDesc = () => {
   return (
-    <Box w={400} h={"100vh"} ml={10} backgroundColor={"brand.2"} p={4}>
+    <Box
+      w={400}
+      h={"100vh"}
+      ml={10}
+      backgroundColor={"brand.2"}
+      p={4}
+      display={"flex"}
+      flexDirection={"column"}
+    >
+      <Box
+        display={"flex"}
+        justifyContent={"space-between"}
+        mb={10}
+        alignItems={"center"}
+      >
+        <Heading fontSize={"3xl"} color={"brand.1"}>
+          Filipe Costa
+        </Heading>
+        <Icons />
+      </Box>
       <Text
         color={"brand.1"}
         fontSize={"4xs"}

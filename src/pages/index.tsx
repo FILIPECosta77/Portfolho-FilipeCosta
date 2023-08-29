@@ -1,7 +1,7 @@
 import { Box, Flex, Text, Heading, Image, Stack } from "@chakra-ui/react";
 import Head from "next/head";
 import MyButton from "@/components/Button";
-import { pictures } from "@/files/pictures";
+import { pictures } from "@/images/pictures";
 import { useRouter } from "next/router";
 
 export default function Home() {

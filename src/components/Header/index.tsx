@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Text, Icon, Image } from "@chakra-ui/react";
 import { AiFillHome } from "react-icons/ai";
-import { pictures } from "@/files/pictures";
+import { pictures } from "@/images/pictures";
 import { useRouter } from "next/router";
 
 interface iProps {

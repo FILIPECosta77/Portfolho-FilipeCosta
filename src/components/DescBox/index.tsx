@@ -5,9 +5,7 @@ import Icons from "../icons";
 const LongDesc = () => {
   return (
     <Box
-      w={400}
-      h={"100vh"}
-      ml={10}
+      w={612}
       backgroundColor={"brand.2"}
       p={4}
       display={"flex"}

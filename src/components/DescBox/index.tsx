@@ -20,7 +20,7 @@ const LongDesc = () => {
         <Heading fontSize={"3xl"} color={"brand.1"}>
           Filipe Costa
         </Heading>
-        <Icons />
+        <Icons color="brand.1" />
       </Box>
       <Text
         color={"brand.1"}

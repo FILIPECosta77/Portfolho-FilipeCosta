@@ -1,4 +1,5 @@
-import { iProjectDataFront } from "@/images/pictures";
+import RedirectButton from "@/components/Button/RedirectButton";
+import { iProjectData } from "@/images/pictures";
 import { Box, Text, Stack, Tag } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
@@ -8,7 +9,14 @@ const CardProjectFront = ({
   PDesc,
   PImg1,
   PImg2,
-}: iProjectDataFront) => {
+  TechName,
+  link,
+}: iProjectData) => {
+  const redirect = () => {
+    var win = window.open(link, "_blank");
+    win!.focus();
+  };
+
   return (
     <Box
       border={"4px"}
@@ -25,10 +33,14 @@ const CardProjectFront = ({
         </Text>
         <Stack spacing={"1px"} direction={"row"} alignItems={"center"}>
           <Box>
-            <Image src={PImg1} alt="Imagem so site para Pc" width={160} />
+            <Image src={PImg1} alt="Imagem do site para Pc" width={160} />
           </Box>
           <Box>
-            <Image src={PImg2} alt="Imagem so site para Mobile" width={100} />
+            <Image
+              src={PImg2 || ""}
+              alt="Imagem do site para Mobile"
+              width={100}
+            />
           </Box>
         </Stack>
       </Box>
@@ -40,8 +52,15 @@ const CardProjectFront = ({
         justifyContent={"space-between"}
       >
         <Text fontWeight={400}>{PDesc}</Text>
-        <Stack alignItems={"flex-end"}>
-          <Tag>FrontEnd</Tag>
+        <Stack
+          alignItems={"flex-end"}
+          direction={"row"}
+          justifyContent={"space-between"}
+        >
+          <RedirectButton click={redirect} />
+          <Tag backgroundColor={"brand.3"} color={"brand.1"}>
+            {TechName}
+          </Tag>
         </Stack>
       </Box>
     </Box>

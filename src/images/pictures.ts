@@ -9,16 +9,13 @@ interface iPics {
   profile: string;
 }
 
-export interface iProjectDataFront {
+export interface iProjectData {
+  TechName: "FrontEnd" | "BackEnd";
   PName: string;
   PDesc: string;
   PImg1: StaticImageData;
-  PImg2: StaticImageData;
-}
-export interface iProjectDataBack {
-  PName: string;
-  PDesc: string;
-  PImg: StaticImageData;
+  PImg2?: StaticImageData;
+  link: string;
 }
 
 export const pictures: iPics = {
@@ -26,33 +23,38 @@ export const pictures: iPics = {
     "https://e1.pxfuel.com/desktop-wallpaper/659/18/desktop-wallpaper-dr-stone-senku-x-chrome-dr-stone-mobile.jpg",
 };
 
-export const ProjectsDataFront: iProjectDataFront[] = [
+export const ProjectsData: iProjectData[] = [
   {
+    TechName: "FrontEnd",
     PName: "AstroVerso",
     PDesc:
       "Site que convem deixar o estudo sobre astronomia divertido e pratico para que qualquer pessoa possa se divertir enquanto aprende",
     PImg1: pc1,
     PImg2: celular1,
+    link: "https://github.com/FILIPECosta77/astroverso",
   },
   {
+    TechName: "FrontEnd",
     PName: "MotorsShop",
     PDesc:
       "Site Completo de venda de carros onde o cliente pode anunciar seus carros e comprar carros, contem aba de perfil do usuario e filtro de pesquisa avançado",
     PImg1: pc2,
     PImg2: celular2,
+    link: "https://github.com/FILIPECosta77/FrontEnd-FullStackM6",
   },
-];
-
-export const ProjectsDataBack: iProjectDataBack[] = [
   {
+    TechName: "BackEnd",
     PName: "E-Commerce API",
     PDesc: "API Completa de um E-commerce construida em python, Django e MySql",
-    PImg: pc3,
+    PImg1: pc3,
+    link: "https://github.com/FILIPECosta77/E-commerce-BackEnd",
   },
   {
+    TechName: "BackEnd",
     PName: "API MotorsShop",
     PDesc:
       "API Do Projeto FullStack MotorsSHop construida em Node ultilizando Prisma, e PostgresSql",
-    PImg: pc3,
+    PImg1: pc3,
+    link: "https://github.com/FILIPECosta77/BackEnd-FullStackM6",
   },
 ];

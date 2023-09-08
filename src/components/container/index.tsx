@@ -7,7 +7,7 @@ interface iProps {
 
 const Container = ({ children }: iProps) => {
   return (
-    <Box w={"100%"} ml={"60px"} mr={"60px"} mt={"30px"}>
+    <Box w={"100%"} ml={"60px"} mr={"60px"} mt={"30px"} mb={"30px "}>
       {children}
     </Box>
   );

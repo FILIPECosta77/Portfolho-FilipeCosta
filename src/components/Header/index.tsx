@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Text, Icon, Image } from "@chakra-ui/react";
+import { Box, Text, Icon } from "@chakra-ui/react";
+import Image from "next/image";
 import { AiFillHome } from "react-icons/ai";
 import { pictures } from "@/images/pictures";
 import { useRouter } from "next/router";
@@ -35,13 +36,7 @@ const Header = ({ children }: iProps) => {
       <Text color={"brand.1"} fontSize={"2xl"} fontWeight={700}>
         {`<${children}/>`}
       </Text>
-      <Image
-        alt="Profile"
-        h={"100%"}
-        w={50}
-        src={pictures.profile}
-        overflow={"auto"}
-      />
+      <Image alt="Profile" src={pictures.profile} className="profileSX" />
     </Box>
   );
 };

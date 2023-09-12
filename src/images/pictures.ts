@@ -3,10 +3,11 @@ import celular2 from "./celular2.png";
 import pc1 from "./pc1.png";
 import pc2 from "./pc2.png";
 import pc3 from "./pc3.png";
+import profile from "./IMG_20230910_182934.jpg";
 import { StaticImageData } from "next/image";
 
 interface iPics {
-  profile: string;
+  profile: StaticImageData;
 }
 
 export interface iProjectData {
@@ -19,8 +20,7 @@ export interface iProjectData {
 }
 
 export const pictures: iPics = {
-  profile:
-    "https://e1.pxfuel.com/desktop-wallpaper/659/18/desktop-wallpaper-dr-stone-senku-x-chrome-dr-stone-mobile.jpg",
+  profile: profile,
 };
 
 export const ProjectsData: iProjectData[] = [

@@ -1,6 +1,7 @@
-import { Box, Flex, Text, Heading, Image, Stack } from "@chakra-ui/react";
+import { Box, Flex, Text, Heading, Stack } from "@chakra-ui/react";
 import Head from "next/head";
 import MyButton from "@/components/Button/Button";
+import Image from "next/image";
 import { pictures } from "@/images/pictures";
 import { useRouter } from "next/router";
 import Footer from "@/components/Footer";
@@ -85,12 +86,13 @@ export default function Home() {
             </Stack>
           </Box>
         </Box>
-        <Image
-          alt="Profile"
-          w={"100%"}
-          src={pictures.profile}
-          overflow={"auto"}
-        />
+        <Box>
+          <Image
+            className="profileImage"
+            src={pictures.profile}
+            alt="Foto Filipe Costa"
+          />
+        </Box>
       </Box>
       <Footer />
     </>

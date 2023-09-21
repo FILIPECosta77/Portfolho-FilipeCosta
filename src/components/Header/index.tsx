@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, Text, Icon } from "@chakra-ui/react";
 import Image from "next/image";
 import { AiFillHome } from "react-icons/ai";
 import { pictures } from "@/images/pictures";
 import { useRouter } from "next/router";
+import { myContext } from "@/context";
+import { useContext } from "react";
+import { cursorTo } from "readline";
 
 interface iProps {
   children: React.ReactNode;
@@ -11,6 +14,16 @@ interface iProps {
 
 const Header = ({ children }: iProps) => {
   const router = useRouter();
+  const { largerThan900, largerThan700, setTextModal, textModal } =
+    useContext(myContext);
+
+  useEffect(() => {
+    largerThan700 ? setTextModal(true) : setTextModal(false);
+  }, [largerThan700, setTextModal]);
+
+  const modalButton = () => {
+    setTextModal(!textModal);
+  };
 
   return (
     <Box
@@ -33,10 +46,17 @@ const Header = ({ children }: iProps) => {
         cursor={"pointer"}
         onClick={() => router.replace("/")}
       />
-      <Text color={"brand.1"} fontSize={"2xl"} fontWeight={700}>
+      <Text
+        color={"brand.1"}
+        fontSize={"2xl"}
+        fontWeight={700}
+        display={largerThan900 ? "flex" : "none"}
+      >
         {`<${children}/>`}
       </Text>
-      <Image alt="Profile" src={pictures.profile} className="profileSX" />
+      <Box cursor={largerThan700 ? "cursor" : "pointer"} onClick={modalButton}>
+        <Image alt="Profile" src={pictures.profile} className="profileSX" />
+      </Box>
     </Box>
   );
 };

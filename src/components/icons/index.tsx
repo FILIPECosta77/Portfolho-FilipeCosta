@@ -1,7 +1,7 @@
 import React from "react";
 import { TbBrandGithub, TbBrandLinkedin } from "react-icons/tb";
 import { HiOutlineDocumentText } from "react-icons/hi";
-import { Icon } from "@chakra-ui/react";
+import { Box, Flex, Icon } from "@chakra-ui/react";
 
 interface iLink {
   name: string;
@@ -10,6 +10,7 @@ interface iLink {
 
 interface iColorProps {
   color: "brand.1" | "brand.2" | "brand.3";
+  hoverColor: "black" | "white";
 }
 
 const links: iLink[] = [
@@ -27,20 +28,32 @@ const links: iLink[] = [
   },
 ];
 
-const Icons = ({ color }: iColorProps) => {
+const Icons = ({ color, hoverColor }: iColorProps) => {
   const redirect = (link: string) => {
     var win = window.open(link, "_blank");
     win!.focus();
   };
 
+  const setHoverColor = () => {
+    return hoverColor === "white"
+      ? "rgba(250,250,250, 0.3)"
+      : "rgba(0, 0, 0, 0.3)";
+  };
+
   return (
-    <>
+    <Box display={"flex"} gap={12}>
       <Icon
         as={HiOutlineDocumentText}
         color={color}
         boxSize={8}
         cursor={"pointer"}
         onClick={() => redirect(links[0].link)}
+        _hover={{
+          backgroundColor: setHoverColor(),
+          transition: "0.6s",
+        }}
+        borderRadius={"50px"}
+        p={"2px"}
       />
       <Icon
         as={TbBrandGithub}
@@ -48,6 +61,12 @@ const Icons = ({ color }: iColorProps) => {
         boxSize={8}
         cursor={"pointer"}
         onClick={() => redirect(links[1].link)}
+        _hover={{
+          backgroundColor: setHoverColor(),
+          transition: "0.6s",
+        }}
+        borderRadius={"50px"}
+        p={"2px"}
       />
       <Icon
         as={TbBrandLinkedin}
@@ -55,8 +74,14 @@ const Icons = ({ color }: iColorProps) => {
         boxSize={8}
         cursor={"pointer"}
         onClick={() => redirect(links[2].link)}
+        _hover={{
+          backgroundColor: setHoverColor(),
+          transition: "0.6s",
+        }}
+        borderRadius={"50px"}
+        p={"2px"}
       />
-    </>
+    </Box>
   );
 };
 

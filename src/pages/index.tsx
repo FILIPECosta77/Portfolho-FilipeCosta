@@ -26,6 +26,7 @@ export default function Home() {
       </Head>
       <Box
         w={"100%"}
+        h={"100%"}
         backgroundColor={"brand.1"}
         display={"flex"}
         flexDirection={largerThan1200 ? "row" : "column-reverse"}
@@ -43,7 +44,7 @@ export default function Home() {
         // h={biggestThan750 ? "90vh" : ""}
       >
         <Box
-          width={"100%"}
+          w={"100%"}
           display={"flex"}
           flexDirection={"column"}
           justifyContent={"space-around"}

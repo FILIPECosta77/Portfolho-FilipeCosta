@@ -30,6 +30,7 @@ export default function Home() {
         backgroundColor={"brand.1"}
         display={"flex"}
         flexDirection={largerThan1200 ? "row" : "column-reverse"}
+        justifyContent={"flex-end"}
         gap={
           largerThan1200
             ? 12
